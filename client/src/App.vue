@@ -1,26 +1,12 @@
-<script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
-</script>
-
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="wrapper">
+    <Welcome />
+    <Players users="users" />
+  </div>
+  <div>
+    <input placeholder="Your name">
+    <button>Join</button>
+  </div>
 </template>
 
 <style>
@@ -85,3 +71,21 @@ a,
   }
 }
 </style>
+
+<script setup lang="ts">
+import Players from "./components/Players.vue";
+import { io } from "socket.io-client"
+import Welcome from "@/components/Welcome.vue";
+// export default {
+//   components: {Welcome}
+// }
+const socket = io()
+
+let users = []
+
+socket.on('users', (u) => {
+  users = u;
+  console.log(users)
+})
+</script>
+

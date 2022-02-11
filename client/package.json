@@ -9,9 +9,12 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "vue": "^3.2.29"
+    "socket.io-client": "^4.4.1",
+    "vue": "^3.2.29",
+    "vuetify": "^3.0.0-alpha.0"
   },
   "devDependencies": {
+    "@mdi/font": "^6.5.95",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/node": "^16.11.22",
     "@vitejs/plugin-vue": "^2.1.0",
@@ -23,6 +26,7 @@
     "prettier": "^2.5.1",
     "typescript": "~4.5.5",
     "vite": "^2.7.13",
+    "vue-cli-plugin-vuetify": "~2.4.5",
     "vue-tsc": "^0.31.1"
   }
 }

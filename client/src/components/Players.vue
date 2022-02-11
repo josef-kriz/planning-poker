@@ -1,15 +1,10 @@
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <slot></slot>
-    </div>
-  </div>
+  <ul>
+    <p> Your team´is already there:</p>
+  <li v-for="item in users">
+    {{ item }}
+  </li>
+  </ul>
 </template>
 
 <style scoped>
@@ -84,3 +79,10 @@ h3 {
   }
 }
 </style>
+
+<script setup lang="ts">
+defineProps<{
+  users: any[];
+}>();
+</script>
+
